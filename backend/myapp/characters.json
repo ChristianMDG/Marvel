@@ -1,1 +1,14 @@
-[]
+[
+  {
+    "id": 1,
+    "name": "Spider-Man",
+    "realName": "Peter parker",
+    "universe": "MUC"
+  },
+  {
+    "id": 2,
+    "name": "Docteur Strange",
+    "realName": "Bobakary",
+    "universe": "Marvel"
+  }
+]
