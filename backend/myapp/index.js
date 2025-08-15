@@ -37,11 +37,6 @@ async function writeCharacters(chars) {
     await fs.writeFile(DATA_FILE, JSON.stringify(chars, null, 2));
 }
 
-// GET : Accueil
-app.get('/', (req, res) => {
-    res.send('Hello, Express!');
-});
-
 // GET : Tous les personnages
 app.get('/characters', async (req, res) => {
     const characters = await readCharacters();
@@ -68,7 +63,8 @@ app.post('/characters', async (req, res) => {
         id: characters.length ? Math.max(...characters.map(c => c.id)) + 1 : 1,
         name,
         realName,
-        universe
+        universe,
+        
     };
     characters.push(newCharacter);
     await writeCharacters(characters);
@@ -92,7 +88,7 @@ app.delete('/characters/:id', async (req, res) => {
     const id = parseInt(req.params.id);
     const characters = await readCharacters();
     const index = characters.findIndex(c => c.id === id);
-    if (index === -1) return res.status(404).json({ error: 'Personnage introuvable' });
+    if (index<0) return res.status(404).json({ error: 'Personnage introuvable' });
     const deleted = characters.splice(index, 1);
     await writeCharacters(characters);
     res.json({ message: 'Personnage supprimé', deleted: deleted[0] });

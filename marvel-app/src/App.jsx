@@ -33,12 +33,12 @@ const App = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-purple-200 via-pink-200 to-yellow-100 p-6">
+    <div className="min-h-screen bg-gray-200 p-6">
       <h1 className="text-4xl font-bold text-center mb-8 text-gray-800">Marvel Characters CRUD</h1>
       
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
         {/* Formulaire */}
-        <div className="bg-white p-6 rounded-xl shadow-lg">
+        <div className="bg-white p-6 rounded-xl shadow-lg h-75">
           <h2 className="text-2xl font-semibold mb-4 text-gray-700">
             {editingCharacter ? "Modifier un personnage" : "Ajouter un personnage"}
           </h2>
