@@ -19,7 +19,6 @@ const CharacterForm = ({ onSubmit, editingCharacter }) => {
     onSubmit({ name, realName, universe });
     setName(""); setRealName(""); setUniverse("");
   };
-
   return (
     <form onSubmit={handleSubmit} className="space-y-2 p-4 border rounded border-gray-100">
       <input type="text" placeholder="Nom" value={name} onChange={(e) => setName(e.target.value)} className="border-none p-1 w-full bg-gray-100 outline-none" />
